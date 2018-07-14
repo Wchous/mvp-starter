@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-const {API_KEY} = '04c96ec32bbace5646ad77d7c171ae4a'
+const {API_KEY} = window.NEWS_API
 const API_URL = 'https://newsapi.org/v2/top-headlines?country=us'
 
 

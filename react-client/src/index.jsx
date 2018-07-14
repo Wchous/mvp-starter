@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   selectRegion() {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&key=${window.News_API}&source=reuters&limit=10`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${this.req.body}source=abc-news,al-jazeera-english,bbc-news,breitbart-news,cnn,financial-times,fox-news,msnbc,reuters,rt,the-new-york-times,the-wall-street-journal,the-washington-post,the-washington-times&key=${window.News_API}&limit=10`)
       .then(response => response.json())
       .then(data => this.setState({ source: data.results}));
   }
