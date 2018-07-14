@@ -2,35 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import dropdown from './components/dropdown.jsx';
 
-class App extends React.Component {
+
+class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
     }
   }
 
-  componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
-  }
+  // componentDidMount() {
+  //   let topics = [];
+  //   $.ajax({
+  //     url: '/headlines', 
+  //     success: (data) => {
+  //       this.setState({
+  //         headlines: data
+  //       })
+  //     },
+  //     error: (err) => {
+  //       console.log('err', err);
+  //     }
+  //   });
+  // }
 
   render () {
     return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
+      <h1>AnonaNews</h1>
+      <dropdown category={this.state_____`FILLL INNNNNN WITH STUFFFFFFF`}/>
     </div>)
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Categories />, document.getElementById('category'));

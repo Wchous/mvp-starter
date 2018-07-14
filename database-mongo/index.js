@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/3000');
 
 var db = mongoose.connection;
 
@@ -11,21 +11,43 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var articleSchema = mongoose.Schema({
+  title: String,
+  category: String,
+  url: String,
+  content: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Article = mongoose.model('Article', articleSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+let save = ((err,newsObj) => {
+  
+  let returnArticle = {}
+  for(let i = 0; i<newsObj.length;i++){
+    console.log(`HEYYYYYYYYYY it's the parsedObj ${newsObj}`)
+    
+
+    returnArticle.title = newsObj[i].title
+    returnArticle.category = newsObj[i].category
+    returnArticle.url = newsObj[i].url
+    returnArticle.content = newsObj[i].descroption
+  }
+  console.log(`********* ${returnArticle}`)
+
+  let headlines = new Article(returnArticle)
+  
+  headlines.save()
+})
+
+let selectAll = (callback) => {
+  Article.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
       callback(null, items);
     }
-  });
+  }).limit(10)
 };
 
+module.exports.save = save
 module.exports.selectAll = selectAll;

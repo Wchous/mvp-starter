@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+   -AnonaNews
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  - For anyone who wants to compare coverage and access information across publications efficiently and without bias.  
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+  - While the prevalence of social media and mobile technology has technically facilitated and expanded access to information,
+    what we are currently witnessing in the US and around the globe is that, rather than tapping a plethora of information sources
+    users are creating a personalized, closed information ecosystem. With AnonaNews, we’re breaking the cycle of preconceived
+    notions and biases by aggregating news from across the political spectrum, placing it side-by-side with coverage from other
+    publications, and stripping out the source. Rather than judging content on where it’s coming from, readers can access a variety
+    of opinions and judge it purely on its own merit.
 ## Problem ##
   > Describe the problem your product solves.
-
+  - Addressing consumer bias when selecting media sources and highlights media bias by comparing coverage.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+  - Aggregates content for easy comparison and removes sourcing.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+  - An abundance of news, an abundance of opinions, without bias. 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  - In terms of getting access to content, the API I’ve found seems to be pretty easy to manage and start the flow of info.
+    The hard part will be properly sorting and filtering articles based on category selection and presenting it. 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  - “I’ve been exposed to new topics and opinions and am seeing a more complete perspective of current events.”
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  - Go to the site, select a topic, and compare coverage for yourself. 
