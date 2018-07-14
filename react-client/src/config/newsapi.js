@@ -1,0 +1,1 @@
+window.NEWS_API = '04c96ec32bbace5646ad77d7c171ae4a'

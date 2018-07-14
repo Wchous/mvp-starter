@@ -7,8 +7,8 @@ let Dropdown = React.createClass({
     };
   },
   
-  select: function(item) {
-    this.props.selected = item;
+  select: function(categories) {
+    this.props.selected = category;
   },
         
   show: function() {
@@ -35,15 +35,16 @@ let Dropdown = React.createClass({
     </div>;
   },
 
+  
 renderListItems: function() {
-  let items = [];
-  for (let i = 0; i < this.props.list.length; i++) {
-    let item = this.props.list[i];
-    items.push(<div onClick={this.select.bind(null, item)}>
-      <span>{item.title}</span>
+  let categoryList = [];
+  for (let i = 0; i < this.props.categoryList.length; i++) {
+    let category = this.props.list[i];
+    categoryList.push(<div onClick={this.select.bind(null, categories)}>
+      <span>{categories.title}</span>
     </div>);
     }
-    return items;
+    return categoryList;
   }
 });
 
@@ -92,3 +93,5 @@ let categories = [
     key:'location'
   }
 ],
+
+export default Dropdown;

@@ -1,38 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
-import dropdown from './components/dropdown.jsx';
+import Search from './components/Search.jsx'
+import Headlines from './components/Headlines.jsx'
 
 
-class Categories extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      regions: [],
+      source: []
     }
+    this.selectSource.bind(this)
   }
 
-  // componentDidMount() {
-  //   let topics = [];
-  //   $.ajax({
-  //     url: '/headlines', 
-  //     success: (data) => {
-  //       this.setState({
-  //         headlines: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    this.selectRegion();
+  }
+
+  selectRegion() {
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&key=${window.News_API}&source=reuters&limit=10`)
+      .then(response => response.json())
+      .then(data => this.setState({ source: data.results}));
+  }
+
+
+  selectSource(region) {
+    console.log(`${region} was selected`);
+  }
 
   render () {
     return (<div>
       <h1>AnonaNews</h1>
-      <dropdown category={this.state_____`FILLL INNNNNN WITH STUFFFFFFF`}/>
+      <div>Fetch Headlines based on region or category</div>
+      <Search getInfo={this.getInfo}/>
+      {/* <SelectSource source = {this.state.source} onSelect={this.selectSource}/> */}
     </div>)
   }
 }
 
-ReactDOM.render(<Categories />, document.getElementById('category'));
+ReactDOM.render(<App/>, document.getElementById('app'));
